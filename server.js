@@ -14,7 +14,6 @@ mongoose.connect(process.env.MONGO_URI);
 
 app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
 app.use('/public', express.static(process.cwd() + '/public'));
-app.use('/common', express.static(process.cwd() + '/app/common'));
 
 app.use(session({
 	secret: 'secretClementine',
@@ -24,6 +23,17 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+var User = require('./app/models/users');
+
+setInterval(function(){ // Set interval for checking
+    var date = new Date(); // Create a Date object to find out what time it is
+    if(date.getHours() === 8 && date.getMinutes() === 0){ // Check the time
+        User.update({}, {bars: []}, {multi: true}, function(err, docs) {
+            console.log("User's bars cleared.", docs);
+        });
+    }
+}, 60000); // Repeat every 60000 milliseconds (1 minute)
 
 routes(app, passport);
 

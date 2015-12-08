@@ -21,6 +21,11 @@ body {
 	font-size: 16px;
 	margin: 0;
 	padding: 0;
+	background: #3366cc; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #3366cc , #003d99); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #3366cc, #003d99); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #3366cc, #003d99); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #3366cc , #003d99); /* Standard syntax */
 }
 
 header {
@@ -113,12 +118,6 @@ img {
 }
 
 /****** Click Styling ******/
-
-.btn-container {	/* Styling for the div that contains the buttons */
-	margin: -10px auto 0 auto;
-	text-align: center;
-}
-
 .btn {	/* Styling for buttons */
 	margin: 0 8px;
 	color: white;
@@ -142,63 +141,134 @@ img {
 	-moz-transform: scale(0.9, 0.9);
 }
 
-.btn-delete {	/* Styling for delete button */
-	background-color: #ECEFF1;
-	color: #212121;
+::-webkit-input-placeholder {
+    color: white;
 }
 
-#click-nbr {
-	font-weight: 400;
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: white;
 }
 
-/****** Profile Styling ******/
+:-ms-input-placeholder {
+    color: white;
+}
 
-.github-profile {
-	width: 350px;
-	height: 200px;
-	border-radius: 3px;
-	margin: 86px auto 0 auto;
-	background-color: #EEE;
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#header {
+	color: white;
+	font-family: sans-serif;
 	text-align: center;
-	color: #000;
+	font-size: 60px;
 }
 
-.github-profile p:first-child {
-	padding-top: 16px;
+#search{
+	border: none;
+	border-bottom: 2px solid blanchedalmond;
+	outline: none;
+	background-color: transparent;
+	padding: 10px 10px;
+	font-size: 1.5em;
+	color: white;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
 }
 
-.github-profile p:nth-child(5) {
-	margin-bottom: 16px
+#submit-search{
+	border: none;
+	border: 2px solid blanchedalmond;
+	outline: none;
+	background-color: transparent;
+	display: block;
+	margin: 0 auto;
+	padding: 10px;
+	font-size: 1.3em;
+	margin-top: 5px;
+	color: white;
+	cursor: pointer;
 }
 
-.github-profile p {
-	margin: 0 0 0 16px;
-	text-align: left;
+#bars {
+	margin-top: 100px;
+	margin-bottom: 200px;
 }
 
-.profile-value {
-	font-weight: 400;
+.bar {
+	width: 800px;
+	height: 100px;
+	margin: 10px auto;
+	color: white;
+	font-family: sans-serif;
 }
 
-span {
-	font-weight: 500;
+.bar-img {
+	float: left;
 }
 
-.github-profile > img {
-	padding-top: 16px;
-	margin-bottom: 16px;
+.bar-name {
+	color: white;
+    font-size: 1.17em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 20px;
+	margin-top: 10px;
 }
 
-.github-profile .menu:hover {
-	color: #FFA000;
+.bar-snippet {
+	font-weight: normal;
+	margin-top: 0px;
+	margin-left: 120px;
 }
 
-.github-profile .menu:active {
-	color: #FF630D;
+.clear {
+	clear: both;
 }
 
-#menu-divide {
-	color: #FFFFFF;
-	display: inline;
-	margin: 0;
+.going {
+	font-size: 1.3em;
+    cursor: pointer;
+    margin: 5px 0 10px 20px;
+    text-decoration: underline;
+    display: inline-block;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#login-title {
+	color: white;
+	font-size: 60px;
+}
+
+#login-title {
+	color: white;
+	font-size: 60px;
+}
+
+#login-btn {
+	-webkit-transition: background-color 250ms linear;
+    -moz-transition: background-color 250ms linear;
+    -o-transition: background-color 250ms linear;
+    -ms-transition: background-color 250ms linear;
+    transition: background-color 250ms linear;
+}
+
+#login-btn:hover {
+	background-color: #0099ff;
 }
